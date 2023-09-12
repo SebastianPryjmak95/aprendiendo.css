@@ -1,0 +1,2 @@
+# Aprendiendo CSS
+En este proyecto estoy aprendiendo a utilizar css y sus propiedades donde los voy implementado a medida que los voy aprendiendo y demostrando su uso. Ademas coloco mis anotaciones para mejorar cuando retome.
