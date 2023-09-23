@@ -26,6 +26,166 @@ https://www.w3schools.com/css/css_boxmodel.asp
 h1{
     width:400px;
     height: 200px;
-    border-width:3px;
-    border-style: solid;
+   /* Propiedades del Borde shorthand*/
+    border-color:green;/*? aplico color al borde*/
+    border-top-color: red;
+    border-left-color: blue;
+    border-width:medium;/*? aplico el grosor de la linea del borde --- thin-1px; medium-3px;thick-5px*/
+    border-style: solid;/*? aplico estilo al borde*/
+    /*forma mas sintetizada*/
+    border: 2px dashed blue;
 }
+
+.caja-uno,
+.caja-dos{
+    background-color: chocolate;
+    border:medium solid orange;
+    /*
+    Esto aplica para margin y padding
+    1valor= aplica a los 4 lados.
+    2valores= primer valor es para los lados verticales(top y bottom) y el segundo valor es para los lados horizontales(left y right)
+    3valores=
+    1 valor = es para top
+    2 valor = es para los horizontales(l/r).
+    3 valor = es para bottom
+
+    4 valores => Pienza en las agujas del reloj
+        * 1 valor es la parte top (12hs)
+        * 2 valor es la parte right (3hs)
+        * 3 valor es la parte bottom (6hs)
+        * 4 valor es la parte left (9hs)
+    */
+    
+    /*1 valor*/
+    padding: 20px;
+    margin:20px;
+    
+    /*2 valor*/
+    padding:20px 40px;
+    margin:20px 40px;
+
+    /*3 valor*/
+    padding:0 40px 20px;
+    margin:50px 30px 0;
+
+    /*4 valor*/
+    padding:0 40px 20px 50px;
+    margin:100px 50px 30px 0; /** dejo la clase de css en 5:41:10 parte de caja en linea vs cajas en bloque */
+}
+
+/*
+? CAJA DE LINEA:
+ * - Ocupa el espacio para mostrar su contenido.
+ * - No tiene dimensiones modificables (alto,ancho).
+ * - Permite otros elementos a su lado.
+ * - Padding y margin solo empujan a elementos adyacentes en horizontal. NUNCA EN VERTICAL.
+
+ ? CAJA EN BLOQUE:
+  * - Ocupan todo el ancho disponible.
+  * - Tienen dimensiones modificables (alto, ancho).
+  * - NO permiten otros elementos a su lado (aunque especifique un ancho, siguen ocupando todo el espacio disponible). 
+*/
+
+.caja-linea,
+.caja-bloque{
+    background-color: darkcyan;
+    color:white;
+    width:500px;
+    height: 250px;
+    padding:16px;
+    border:medium solid black;
+}
+
+.caja-linea{ /* Aplicando el margin empuja el contenido en horizontal pero mantiene el vertical*/
+    margin:48px;
+}
+
+.caja-bloque{
+    margin: 32px;
+}
+
+
+/*
+    ? PROPIEDAD DISPLAY
+
+    *inline
+    *block
+    *inline-block = > Se comporta como un elemento de linea pero acepta modificar sus dimensiones (alto y ancho) 
+    *none => oculta la caja.
+    *table
+    *list-item
+    *flex => No se ven xq es un curso aparte 
+    *grid => No se ven xq es un curso aparte
+*/
+
+
+.caja-none,
+.caja-linea-bloque,
+.caja-hidden{
+    background-color: darkolivegreen;
+    color:white;
+    width:600px;
+    height:300px;
+    border:medium solid black;
+}
+
+.caja-linea-bloque{
+    display: inline-block;
+}
+
+.caja-none{ /*Oculta el elemento del la pagina*/
+    display: none;
+}
+
+.caja-hidden{
+    visibility: hidden; /*oculta la visibilidad pero no el espacio*/
+}
+
+.overflow{
+    background-color: darkcyan;
+    width: 200px;
+    height: 100px;
+    overflow: visible; /*propiedad de defecto donde sobrepasa el contenido*/
+    /*overflow: hidden; /*oculta el texto en el contenido*/
+    /*overflow: scroll; /* en esta propiedad nos da las 2 barra de desplazamiento */
+    overflow: auto; /*significa que regula las barras de desplazamiendo en el lado que lo requiera*/
+    /*overflow-y: scroll;
+    overflow-x:scroll;*/
+}
+
+/* TAMAÑO DE CAJA*/
+
+.box-sizing-content{
+    background-color: deepskyblue;
+    box-sizing: content-box;
+    width: 500px;
+    height: 250px;
+    padding:10px;
+    border: thick solid black;
+}
+
+.box-sizing-border{
+    background-color: deepskyblue;
+    box-sizing: border-box;
+    width: 500px;
+    height: 250px;
+    padding:10px;
+    border: thick solid black;
+}
+
+.contaniner-col-3{
+    background-color:burlywood;
+    width:600px;
+    height: 300px;
+    margin-top:20px;
+}
+
+.contaniner-col-3>*{
+    box-sizing: border-box;
+    width: 200px;
+    border:thin solid red;
+    padding:10px;
+    float: left;
+}
+
+/*? 6:54:00​ - Propiedades float & clear */
